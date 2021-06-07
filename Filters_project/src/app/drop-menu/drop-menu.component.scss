@@ -1,0 +1,71 @@
+.point {
+  position: relative;
+  max-width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #151822;
+  border: 1px solid rgba(96, 101, 128, 0.25);
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 9px 15px 8px 13px;
+  &__icon{
+    margin-top: 3px;
+    width: 15px;
+    height: 9px;
+    background: url("~img/arrow_drop_menu.svg") no-repeat center;
+  }
+  &__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    color: #8C99B2;
+    margin-right: 25px;
+  }
+}
+.menu {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  background-color: #11151D;
+  min-width: 200px;
+  max-width: 200px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #8C99B2;
+  border-radius: 3px;
+  left: 0;//-5px;
+  top: 0;//-5px;
+  &__drop {
+    list-style-type: none;
+    li{
+      background-color: #11151D;
+      padding: 12px 0 12px 12px;
+      button{
+        width: 100%;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 16px;
+        max-height: 32px;
+        -webkit-line-clamp: 2;
+      }
+    }
+  }
+  //visibility: hidden;
+  //opacity: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: all 0.2s ease;
+}
+
+.active{
+  //visibility: visible;
+  //opacity: 1;
+  transform: scaleY(1);
+  transition: all 0.2s ease;
+}

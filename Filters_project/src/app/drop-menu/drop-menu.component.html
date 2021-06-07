@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="point">
+    <span class="point__title" #inheart>{{(index === 0) ? this.appMainService.facilityFilter: this.appMainService.priorityFilter}}</span>
+    <div class="point__icon"></div>
+    <div class="menu"[ngClass]="{
+  active: toggleMenu
+  }">
+      <ul class="menu__drop">
+        <li (click)="pointOneClick()"><button>Выбрать все</button></li>
+        <li *ngFor="let point of this.data" (click)="pointClick(this.point)"><button>{{point}}</button></li>
+      </ul>
+    </div>
+  </div>
+</div>

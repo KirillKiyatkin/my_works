@@ -1,0 +1,48 @@
+@mixin background-grad-top($color, $interest) {
+  background: -moz-linear-gradient(bottom, $color 0.03%, rgba(23, 26, 36, 0.5) $interest); /* FF3.6-15 */
+  background: -webkit-linear-gradient(bottom, $color 0.03%, rgba(23, 26, 36, 0.5) $interest); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to top, $color 0.03%, rgba(23, 26, 36, 0.5) $interest); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222633', endColorstr='#00222633',GradientType=1 ); /* IE6-9 */
+  background-repeat: no-repeat;
+}
+
+.status{
+  cursor: pointer;
+  min-width: 80px;
+  width: 17vw;
+  display: flex;
+  justify-content: space-between;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #FFFFFF;
+  padding: 10px 9px 15px 9px;
+  border-bottom: 2px solid #606580;
+  background-color: #171923;
+}
+
+.active{
+  @keyframes smooth-grad-top {
+    0% {
+      @include background-grad-top($color: rgba(4, 135, 253, 0.2), $interest: 14%)
+    }
+    20% {
+      @include background-grad-top($color: rgba(4, 135, 253, 0.2), $interest: 28%)
+    }
+    40% {
+      @include background-grad-top($color: rgba(4, 135, 253, 0.2), $interest: 42%)
+    }
+    60% {
+      @include background-grad-top($color: rgba(4, 135, 253, 0.2), $interest: 56%)
+    }
+    80% {
+      @include background-grad-top($color: rgba(4, 135, 253, 0.2), $interest: 70%)
+    }
+    100% {
+      @include background-grad-top($color: rgba(4, 135, 253, 0.2), $interest: 84%)
+    }
+  }
+  border-bottom: 2px solid #0089FF;
+  animation: smooth-grad-top 0.2s linear forwards;
+}

@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <header class="header">
+      <div class="header__icon"></div>
+      <span class="header__showing">Показатели</span>
+      <button class="header__options"></button>
+    </header>
+  <section class="subheader">
+    <span class="subheader__parameters">Параметры</span>
+    <div class="subheader__feature">
+      <span class="subheader__facts">Факт</span>
+      <span class="subheader__model">Модель</span>
+    </div>
+  </section>
+
+
+  <main class="main">
+   <div class="container">
+     <div class="item" *ngFor="let post of this.data.Posts">
+          <header class="item__header" (click)="toggle($event)">
+            <div class="item__heading">
+              <div class="item__icon"></div>
+              <span class="item__subject">{{this.post.title}}</span>
+            </div>
+            <span class="item__deviation">Отклонений: {{deviation(post)}}</span>
+          </header>
+          <main class="item__main">
+            <ul>
+              <li class="item__point" *ngFor="let point of this.post.points" [ngClass]="{
+              hard: this.point.model != this.point.fact
+              }" (click)="addClass($event)" #elem>
+                <div class="item__title">
+                  <span class="item__caption">{{this.point.parameter}}</span>
+                  <span>{{this.point.units}}</span>
+                </div>
+                <div class="item_fact">{{this.point.fact}}</div>
+                <div class="item_model">{{this.point.model}}</div>
+              </li>
+            </ul>
+          </main>
+     </div>
+   </div>
+  </main>
+
+
+</div>
+

@@ -1,0 +1,206 @@
+@mixin background-grad ($color, $interest){
+  background: -moz-linear-gradient(left,  $color 0.03%, rgba(18,21,30,0.5) $interest); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  $color 0.03%,rgba(18,21,30,0.5) $interest); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  $color 0.03%,rgba(18,21,30,0.5) $interest); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222633', endColorstr='#00222633',GradientType=1 ); /* IE6-9 */
+  background-repeat: no-repeat;
+}
+@mixin component-status($status, $color){
+  &:before{
+    content: $status;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: $color;
+  }
+  svg{
+    fill: $color;
+    height: 20px;
+    width: 20px;
+    margin-left: 15px;
+  }
+}
+
+.container {
+  width: 95vw;
+  min-width: 625px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.component {
+  padding: 10px 20.5px 16px 34px;
+  border: 1px solid rgba(96,101,128,0.25);
+  margin-bottom: 10px;
+  border-left: 2px solid #8C99B2 !important;
+  @include background-grad ($color:rgba(34,38,51,1), $interest: 16.29%);
+  &:hover{
+    border: 1px solid #8C99B2;
+    transition: 0.2s ease-in-out;
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+
+  &__headline {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 13px;
+  }
+
+  &__number {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #D7E2F2;
+    padding-right: 13.14px;
+  }
+
+  &__category {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #D7E2F2;
+    padding-right: 6px;
+  }
+
+  &__mounting {
+    display: flex;
+    flex-grow: 1;
+    gap: 15px;
+    align-items: center;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #D7E2F2;
+    &:before{
+      content: '';
+      display: inline-block;
+      flex-grow: 6.94;
+      height: 1px;
+      background-color: rgba(96, 101, 128, 0.25);
+    }
+    &:after{
+      content: '';
+      display: inline-block;
+      height: 1px;
+      flex-grow: 80.81;
+      background-color: rgba(96, 101, 128, 0.25);
+    }
+    padding-right: 14px;
+  }
+
+  &__time {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #FFFFFF;
+    min-width: 102px;
+  }
+
+  &__subject {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__lead {
+    width: calc(100% - 150px);
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #D7E2F2;
+    max-width: 710px;
+    min-width: 384px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #8C99B2;
+  }
+
+  &__btn {
+    display: flex;
+    min-width: 97.63px;
+    gap: 16px;
+  }
+
+  &__status {
+    display: flex;
+    display: flex;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #606580;
+
+    svg{
+      fill: #606580;
+      height: 20px;
+      width: 20px;
+      margin-left: 15px;
+    }
+  }
+
+  &__delete {
+    width: 10px;
+    height: 15px;
+    fill: #606580;
+    &:hover{
+      fill: #8C99B2;
+    }
+  }
+}
+
+
+
+.middle {
+  border-left: 2px solid #F7931E !important;
+  @include background-grad ($color:rgba(255,140,0,0.2), $interest: 16.29%);
+  &:hover{
+    border: 1px solid #F7931E;
+    transition: 0.2s ease-in-out;
+  }
+  .component__status {
+    display: flex;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #F7931E;
+
+    svg{
+      fill: #F7931E;
+      height: 20px;
+      width: 20px;
+      margin-left: 15px;
+    }
+  }
+}
+.hard {
+  border-left: 2px solid #EB5757 !important;
+  @include background-grad ($color:rgba(235, 87, 87, 0.3), $interest: 16.29%);
+  &:hover{
+    border: 1px solid #EB5757;
+    transition: 0.2s ease-in-out;
+  }
+  .component__status {
+    display: flex;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #EB5757;
+
+    svg{
+      fill: #EB5757;
+      height: 20px;
+      width: 20px;
+      margin-left: 15px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="nav">
+  <div class="nav__tasks">
+    <button routerLinkActive="active" class="nav__task_one" [routerLink]="['/main', 'task_one']" >1 задание</button>
+    <button routerLinkActive="active" class="nav__task_one" [routerLink]="['/main', 'task_one_middle']" >1 задание (middle)</button>
+    <button routerLinkActive="active" class="nav__task_one" [routerLink]="['/main', 'task_one_hard']" >1 задание (hard)</button>
+    <button routerLinkActive="active" class="nav__task_two" [routerLink]="['/main', 'task_two']">2 задание</button>
+  </div>
+  <div class="nav__logout">
+    <button type="button" class="nav__exit" [routerLink]="['']" (click)="auth.logout()"></button>
+  </div>
+</div>
+<main class="main">
+  <div class="main__container">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
